@@ -59,3 +59,8 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/v/3-0/docs
   config.infer_spec_type_from_file_location!
 end
+
+#webrat.configure do [config]
+#  config.mode = :Rails
+#end
+
