@@ -3,6 +3,10 @@ require 'spec_helper'
 describe PagesController do
   render_views
   
+  before(:each) do
+  	@base_title = "Ruby on Rails Tutorial Sample App"
+  end
+  
   describe "GET 'home'" do
     it "returns http success" do
       get 'home'
@@ -14,7 +18,7 @@ describe PagesController do
 #      response.should have_selector("title",
  #       :content => "Ruby on Rails Tutorial Sample App | Home")
       response.should have_selector("title") do |title|
-        title.should contain(/^#{Regexp.escape("Ruby on Rails Tutorial Sample App | Home")}$/)
+        title.should contain(/^#{Regexp.escape("#{@base_title} | Home")}$/)
       end
     end
     
